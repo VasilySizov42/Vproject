@@ -24,9 +24,7 @@ const movieDB = {
     ]
 };
 //1
-const promoAdv = document.querySelector(".promo__adv");
-console.log(promoAdv);
-const remImgs = promoAdv.querySelectorAll('img');
+const remImgs = document.querySelectorAll('.promo__adv img');
 console.log(remImgs);
 remImgs.forEach(element => {
     element.remove();
@@ -47,5 +45,5 @@ const promoInteractiveItem = document.querySelectorAll(".promo__interactive-item
 console.log(promoInteractiveItem);
 //html/body/main/div[2]/div[2]/div[1]/ul/li[1]/text()
 promoInteractiveItem.forEach((elt, i) => {
-elt.querySelector(':nth-child(1)').replaceWith(sortedArr[i]);
+    elt.innerHTML = `${i+1} ${sortedArr[i]} <div class="delete"></div>`;    
 });
